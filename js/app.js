@@ -19,7 +19,7 @@ $(document).ready(function() {
 });
 
 $(function() {
-  $(".aboutIcon")
+  $("#aboutAnchor")
   .mouseenter(function() {
   	if(!about) {
 	  	animateText('about')
@@ -33,7 +33,7 @@ $(function() {
 });
 
 $(function() {
-  $(".portfolioIcon")
+  $("#portfolioAnchor")
   .mouseenter(function() {
   	if(!portfolio) {
 	  	animateText('portfolio')
@@ -47,7 +47,7 @@ $(function() {
 });
 
 $(function() {
-  $(".contactIcon")
+  $("#contactAnchor")
   .mouseenter(function() {
   	if(!contact) {
 	  	animateText('contact')
@@ -68,7 +68,7 @@ function animateText(id, isSet){
 				delay: 20,
 			},
 			out: {
-				effect: "bounceOutRight",
+				effect: "fadeOutLeft",
 				delay: 20,
 			},
 		});
