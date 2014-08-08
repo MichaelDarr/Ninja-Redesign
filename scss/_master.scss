@@ -119,7 +119,7 @@ h1 {
 
 .portfolioSite {
 	width: 100%;
-	height: 450px;
+	margin: 40px 0 20px 0;
 }
 
 .down-arrow {
@@ -151,7 +151,26 @@ h1 {
 	fill: rgb( 40, 40, 40 );
 }
 
-a {
+.visitButton {
+	padding: 10px 20px 10px 20px;
+	height: 50px;
+	border: 1px solid black;
+	color: rgb( 40, 40, 40 );
+	font-size: 1.1em;
+	font-family: 'Lato', sans-serif;
+}
+
+.linkHolder {
+	padding: 37px 0 0 0;
+	text-align: left;
+}
+
+a.visitButton {
+	@include transition(all 0.4s ease-in-out);
+	color: rgb( 40, 40, 40 );
+}
+
+a.visitButton:hover {
 	color: rgb( 200, 200, 200 );
-	text-shadow: 0px 0px 5px rgb( 40, 40, 40 );
+	background-image: url("../img/felt.png");
 }

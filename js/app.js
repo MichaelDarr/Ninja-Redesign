@@ -5,6 +5,7 @@ $(document).foundation();
 $(document).ready(function() {
 	$('#fullpage').fullpage({
 		anchors:['about', 'portfolio', 'contact'],
+		keyboardScrolling: false,
 	});
 	$('.tlt').textillate({
 		in: {
