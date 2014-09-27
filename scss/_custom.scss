@@ -1,0 +1,15 @@
+$black: rgb( 0, 0, 0 );
+$offBlack: rgb( 30, 30, 30 );
+$darkGray: rgb( 60, 60, 60 );
+$gray: rgb( 100, 100, 100 );
+$lightGray: rgb( 180, 180, 180 );
+$offWhite: rgb( 240, 240, 240 );
+$opaque: rgba( 200, 200, 200, 0.3 );
+
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}

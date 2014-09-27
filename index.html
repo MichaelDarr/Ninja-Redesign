@@ -8,22 +8,16 @@
 	<link rel="stylesheet" href="stylesheets/app.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
 
-
-	<link rel="stylesheet" type="text/css" href="fullpage/jquery.fullPage.css" />
 	<link href="textillate/assets/animate.css" rel="stylesheet">
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-	<script type="text/javascript" src="fullpage/jquery.fullPage.min.js"></script>
-	<script src="js/game.min.js"></script>
+	<script src="/js/jquery-2.1.1.min.js"></script>
 
 </head>
 <body class="home">
 
 <div class="navigation" id="navigation">
 	<div class="holder">
-		<a href="#about" id="aboutAnchor">
+		<a href="#about" id="aboutAnchor" class="anchor">
 			<svg class="aboutIcon" id="aboutIcon">
 				<g>
 					<path d="M15.253,33.052l1.088-1.088h7.96l-5.079-9.177l-3.756,0.764c-0.985,0.2-1.771,0.942-2.028,1.914L8.979,40.016
@@ -47,11 +41,11 @@
 				</g>
 			</svg>
 		</a>
-		<h2 id="aboutMessage">About</h2>
+		<h2 id="aboutMessage" class="message">About</h2>
 	</div>
 	</a>
-	<div class="holder">
-		<a href="#portfolio" id="portfolioAnchor">
+	<!-- <div class="holder">
+		<a href="#portfolio" id="portfolioAnchor" class="anchor">
 			<svg class="portfolioIcon" id="portfolioIcon">
 				<g transform="scale(0.65)">
 					<g>
@@ -64,11 +58,38 @@
 				</g>
 			</svg>
 		</a>
-		<h2 id="portfolioMessage">Portfolio</h2>
-	</div>
-	<div class="navSpacer"></div>
+		<h2 id="portfolioMessage" class="message">Portfolio</h2>
+	</div> -->
 	<div class="holder">
-		<a href="#contact" id="contactAnchor">
+		<a href="#pricing" id="pricingAnchor" class="anchor">
+			<svg class="pricingIcon" id="pricingIcon">
+				<path transform="scale(0.5)" d="M84.265,30.752c-0.689-0.46-1.62-0.273-2.08,0.416c-0.784,1.176-1.862,1.684-2.788,1.891
+				c-0.008-1.747-0.854-3.57-2.403-5.119c-1.479-1.479-3.627-1.776-5.107-0.71c-1.107,0.799-1.979,2.571-0.795,4.941
+				c0.737,1.475,2.099,2.656,3.757,3.348c-0.314,0.222-0.677,0.436-1.086,0.64c-0.899,0.45-1.819,0.719-2.71,0.875
+				C66.754,28.258,55.563,22,42.433,22c-2.623,0-5.038,0.171-7.294,0.463c-3.757-2.433-10.729-5.428-17.706-4.963
+				c0.322,2.9,2.101,6.625,4.394,9.313c-4.443,2.745-7.307,6.492-8.749,10.83c-1.691,0.742-3.517,1.213-5.558,1.351
+				c-1.492,0.102-2.619,1.382-2.513,2.874C5.282,45.714,6.422,52.265,10.933,54c0.845,0.325,2.193,0.517,3.798,0.619
+				c1.912,3.124,4.718,5.873,8.182,8.052c-0.58,2.897-1.297,5.819-2.18,8.771C20.351,72.717,21.317,74,22.65,74h8.402
+				c0.831,0,1.589-0.509,1.878-1.288c0.661-1.786,1.22-3.614,1.695-5.476C37.117,67.733,39.733,68,42.433,68
+				c3.139,0,6.166-0.359,9.016-1.022c-0.371,1.482-0.768,2.968-1.215,4.463C49.851,72.717,50.817,74,52.15,74h8.402
+				c0.831,0,1.589-0.509,1.878-1.288c1.497-4.043,2.488-8.292,3.095-12.696c4.612-4.03,7.408-9.275,7.408-15.016
+				c0-1.762-0.272-3.476-0.769-5.124c0.966-0.215,1.958-0.542,2.94-1.034c1.625-0.812,2.648-1.748,3.286-2.654
+				c2.589-0.053,4.904-1.275,6.291-3.355C85.141,32.143,84.954,31.212,84.265,30.752z M24.433,38c-1.381,0-2.5-1.119-2.5-2.5
+				c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5C26.933,36.881,25.813,38,24.433,38z M50.635,40.844
+				c-1.045,0.351-2.18-0.214-2.531-1.262c-0.257-0.768-1.224-1.665-3.104-1.665c-1.46,0-2.322,0.947-2.418,1.882
+				c-0.121,1.165,0.937,2.098,2.829,2.493c4.525,0.948,6.268,4.109,5.987,6.821c-0.255,2.463-2.027,4.442-4.397,5.167V55.5
+				c0,1.104-0.896,2-2,2s-2-0.896-2-2v-1.16c-2.744-0.634-4.343-2.496-4.897-4.152c-0.35-1.048,0.215-2.182,1.263-2.531
+				c1.047-0.351,2.181,0.214,2.531,1.262c0.277,0.829,1.344,1.665,3.103,1.665c1.459,0,2.321-0.947,2.418-1.882
+				c0.121-1.165-0.937-2.098-2.829-2.493c-4.526-0.948-6.268-4.109-5.987-6.821c0.255-2.463,2.027-4.442,4.397-5.167V33
+				c0-1.104,0.896-2,2-2s2,0.896,2,2v1.16c2.743,0.634,4.342,2.496,4.896,4.152C52.247,39.36,51.682,40.493,50.635,40.844z
+				 M73.774,30.829c-0.305-0.609-0.299-1.048-0.135-1.166c0.065-0.047,0.164-0.075,0.285-0.075c0.251,0,0.6,0.125,0.947,0.473
+				c0.909,0.91,1.449,1.932,1.517,2.834C75.213,32.504,74.238,31.756,73.774,30.829z"/>
+			</svg>
+		</a>
+		<h2 id="pricingMessage" class="message">Pricing</h2>
+	</div>
+	<div class="holder">
+		<a href="#contact" id="contactAnchor" class="anchor">
 			<svg class="contactIcon" id="contactIcon">
 				<g transform="scale(1.1)">
 					<path d="M15.58,18.986h-0.777c-0.403,0-0.73-0.327-0.73-0.73c0-0.15,0.06-0.293,0.167-0.397c0.452-0.44,0.832-1.031,1.107-1.668
@@ -89,104 +110,108 @@
 				</g>
 			</svg>
 		</a>
-		<h2 id="contactMessage">Contact</h2>
+		<h2 id="contactMessage" class="message">Contact</h2>
 	</div>
 </div>
-
-<div id="fullpage">
-    <div class="section about">
-    	<h1 class="tlt">Your Design Ninja</h1>
-    	<div class="row">
-    		<div class="medium-4 columns">
-    			<div class="divider"></div>
-    			<h2>Design</h2>
-        	<div class="divider"></div>
-        	<div class="leftText">
-        		<p class="about-text">From creating graphics to laying out web sites, I have a passion for design.  I focus my design efforts on building clean, beautiful experiences for every device, from smartphones to desktops.</p>
-        	</div>
-    		</div>
-    		<div class="medium-4 columns">
-    			<div class="divider"></div>
-    			<h2>Development</h2>
-        	<div class="divider"></div>
-        	<div class="leftText">
-        		<p class="about-text">I have been developing websites for over 5 years.  CSS, JavaScript, HTML5, PHP, MySQL and SASS are my specialties, and I am experienced with WordPress, ImpactJS, Jquery, and Foundation 5.</p>
-        	</div>
-    		</div>
-    		<div class="medium-4 columns">
-    			<div class="divider"></div>
-    			<h2>Customization</h2>
-        	<div class="divider"></div>
-        	<div class="leftText">
-        		<p class="about-text">Every website is tailored to the client's needs.  Your Design Ninja can build anything, from the crazy and flashy to the reserved and subtly classy.  Whatever your needs are, I've got your back.</p>
-        	</div>
-    		</div>
-    	</div>
-    	<a href="#portfolio">
-	    	<svg width="40" height="40" class="down-arrow">
-	    		<path d="M24.246,19.104l-2.242,2.242v-8.343c0-1.104-0.896-2-2-2s-2,0.896-2,2v8.343l-2.243-2.242
-					c-0.781-0.781-2.047-0.781-2.828,0s-0.781,2.048,0,2.828l5.657,5.657h-0.001c0.391,0.391,0.902,0.586,1.415,0.586
-					c0.256,0,0.512-0.049,0.752-0.146c0.241-0.098,0.467-0.244,0.662-0.439l5.656-5.657c0.781-0.78,0.781-2.047,0-2.828
-					C26.294,18.322,25.027,18.322,24.246,19.104z M30.004,2.683C20.438-2.84,8.206,0.438,2.684,10.004
-					c-5.523,9.565-2.246,21.797,7.32,27.32c9.565,5.522,21.798,2.245,27.32-7.32C42.848,20.438,39.569,8.206,30.004,2.683z
-					M33.86,28.004c-4.419,7.652-14.204,10.274-21.856,5.855C4.352,29.441,1.729,19.656,6.147,12.004
-					c4.418-7.653,14.203-10.275,21.856-5.856C35.656,10.565,38.278,20.351,33.86,28.004z"/>
-			</svg>
-		</a>
-    </div>
-    <div class="section portfolio">
-    	<a href="#about">
-	    	<svg width="40" height="40" class="up-arrow black">
-	    		<path  transform="rotate(180, 20, 20)" d="M24.246,19.104l-2.242,2.242v-8.343c0-1.104-0.896-2-2-2s-2,0.896-2,2v8.343l-2.243-2.242
-					c-0.781-0.781-2.047-0.781-2.828,0s-0.781,2.048,0,2.828l5.657,5.657h-0.001c0.391,0.391,0.902,0.586,1.415,0.586
-					c0.256,0,0.512-0.049,0.752-0.146c0.241-0.098,0.467-0.244,0.662-0.439l5.656-5.657c0.781-0.78,0.781-2.047,0-2.828
-					C26.294,18.322,25.027,18.322,24.246,19.104z M30.004,2.683C20.438-2.84,8.206,0.438,2.684,10.004
-					c-5.523,9.565-2.246,21.797,7.32,27.32c9.565,5.522,21.798,2.245,27.32-7.32C42.848,20.438,39.569,8.206,30.004,2.683z
-					M33.86,28.004c-4.419,7.652-14.204,10.274-21.856,5.855C4.352,29.441,1.729,19.656,6.147,12.004
-					c4.418-7.653,14.203-10.275,21.856-5.856C35.656,10.565,38.278,20.351,33.86,28.004z"/>
-				</svg>
-			</a>
-			<a href="#contact">
-	    	<svg width="40" height="40" class="down-arrow black">
-	    		<path d="M24.246,19.104l-2.242,2.242v-8.343c0-1.104-0.896-2-2-2s-2,0.896-2,2v8.343l-2.243-2.242
-					c-0.781-0.781-2.047-0.781-2.828,0s-0.781,2.048,0,2.828l5.657,5.657h-0.001c0.391,0.391,0.902,0.586,1.415,0.586
-					c0.256,0,0.512-0.049,0.752-0.146c0.241-0.098,0.467-0.244,0.662-0.439l5.656-5.657c0.781-0.78,0.781-2.047,0-2.828
-					C26.294,18.322,25.027,18.322,24.246,19.104z M30.004,2.683C20.438-2.84,8.206,0.438,2.684,10.004
-					c-5.523,9.565-2.246,21.797,7.32,27.32c9.565,5.522,21.798,2.245,27.32-7.32C42.848,20.438,39.569,8.206,30.004,2.683z
-					M33.86,28.004c-4.419,7.652-14.204,10.274-21.856,5.855C4.352,29.441,1.729,19.656,6.147,12.004
-					c4.418-7.653,14.203-10.275,21.856-5.856C35.656,10.565,38.278,20.351,33.86,28.004z"/>
-				</svg>
-			</a>
-    	<div class="slide">
-	    	<h1>TEAM EXCEL</h1>
+<div class="about" id="about">
+	<div class="centered">
+		<div class="background">
+    		<h1 class="tlt">Your Design Ninja</h1>
 	    	<div class="row">
-  				<img class="portfolioSite" src="img/teamExcel.png" />
-  			</div>
-  			<div class="row">
-	  			<div class="medium-2 columns linkHolder">
-	  				<a href="http://goteamexcel.org" class="visitButton">VISIT</a>
-	  			</div>
-	  			<div class="medium-10 columns leftText">
-	  				<p class="projectDescription">Team Excel is a nonprofit with the goal empowering students to acheive their dreams founded by Michael Robinson, former Seahawks player.  For this site, I needed to create a fully responsive WordPress theme.</p>
-	  			</div>
-  			</div>
+	    		<div class="medium-4 columns aboutColumn">
+	    			<div class="divider"></div>
+	    			<h2>Design</h2>
+		        	<div class="divider"></div>
+		        	<div class="leftText">
+		        		<p class="about-text">From creating graphics to laying out web sites, I have a passion for design.  I focus my design efforts on building clean, beautiful experiences for every device, from smartphones to desktops.</p>
+		        	</div>
+	    		</div>
+	    		<div class="medium-4 columns aboutColumn">
+	    			<div class="divider"></div>
+	    			<h2>Development</h2>
+		        	<div class="divider"></div>
+		        	<div class="leftText">
+		        		<p class="about-text">I have been developing websites for over 5 years.  CSS, JavaScript, HTML5, PHP, MySQL and SASS are my specialties, and I am experienced with WordPress, ImpactJS, Jquery, and Foundation 5.</p>
+		        	</div>
+	    		</div>
+	    		<div class="medium-4 columns aboutColumn">
+	    			<div class="divider"></div>
+	    			<h2>Customization</h2>
+	        		<div class="divider"></div>
+	        		<div class="leftText">
+	        		<p class="about-text">Every website is tailored to the client's needs.  Your Design Ninja can build anything, from the crazy and flashy to the reserved and subtly classy.  Whatever your needs are, I've got your back.</p>
+	        		</div>
+	    		</div>
+	    	</div>
     	</div>
-    	<div class="slide">
-    		<h1>SHLOOP</h1>
-    		<canvas id="canvas"></canvas>
-    		<div class="row">
-    			<div class="medium-2 columns linkHolder">
-    				<a href="http://www.shloop.net" class="visitButton">VISIT</a>
-    			</div>
-    			<div class="medium-10 columns leftText">
-    				<p class="projectDescription">Shloop is programmed using ImpactJS, a game engine written purely in javascript for the HTML5 canvas element.  The focus of this project was not the web design but the game itself.</p>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    <div class="section">
-    	<h1>Contact</h1>
-    </div>
+	</div>
+	<a href="#pricing">
+    	<svg width="40" height="40" class="down-arrow">
+    		<path d="M24.246,19.104l-2.242,2.242v-8.343c0-1.104-0.896-2-2-2s-2,0.896-2,2v8.343l-2.243-2.242
+				c-0.781-0.781-2.047-0.781-2.828,0s-0.781,2.048,0,2.828l5.657,5.657h-0.001c0.391,0.391,0.902,0.586,1.415,0.586
+				c0.256,0,0.512-0.049,0.752-0.146c0.241-0.098,0.467-0.244,0.662-0.439l5.656-5.657c0.781-0.78,0.781-2.047,0-2.828
+				C26.294,18.322,25.027,18.322,24.246,19.104z M30.004,2.683C20.438-2.84,8.206,0.438,2.684,10.004
+				c-5.523,9.565-2.246,21.797,7.32,27.32c9.565,5.522,21.798,2.245,27.32-7.32C42.848,20.438,39.569,8.206,30.004,2.683z
+				M33.86,28.004c-4.419,7.652-14.204,10.274-21.856,5.855C4.352,29.441,1.729,19.656,6.147,12.004
+				c4.418-7.653,14.203-10.275,21.856-5.856C35.656,10.565,38.278,20.351,33.86,28.004z"/>
+		</svg>
+	</a>
+</div>
+<!-- <div id="portfolio">
+	<h1>PORTFOLIO</h1>
+	<div class="row">
+		<div class="large-4 columns">
+			<img src="img/excelThumb.png" class="portfolioThumb">
+		</div>
+		<div class="large-4 columns">
+			<img src="img/shloopThumb.png" class="portfolioThumb">
+		</div>
+		<div class="large-4 columns">
+		</div>
+	</div>
+</div> -->
+<div class="pricing" id="pricing">
+	<div class="centered">
+		<div class="row">
+			<div class="larg-12 columns">
+				<h1 class="tlt">Pricing</h1>
+			</div>
+			<div class="large-4 medium-6 columns">
+				<div class="divider"></div>
+				<h2>Per Hour</h2>
+	    	<div class="divider"></div>
+	    	<div class="leftText">
+	    		<p class="about-text">Per hour billing is best for those who want to pay for exactly what they recieve.  I will charge $20 per hour I work on the site, and sites can range anywhere from 5 to over 100 hours.  Per hour lets you get what you pay for but does not offer a concrete budget, as I can never estimate perfectly.</p>
+	    	</div>
+			</div>
+			<div class="large-4 medium-6 columns end">
+				<div class="divider"></div>
+				<h2>Per Project</h2>
+	    	<div class="divider"></div>
+	    	<div class="leftText">
+	    		<p class="about-text">Billing per project is for those who would rather stick to their concrete budget.  In this case, you would send me your project and I would send you a definite cost.  This could range anywhere from $100 to over $1,000 depending on the scope of the work. Your budget, your project.</p>
+	    	</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="contact" id="contact">
+	<div class="centered">
+		<div class="contactText">
+			<h1>Contact</h1>
+			<a href="mailto:michael@yourdesign.ninja" class="contactLink">
+    			<svg class="emailIcon">
+	    			<g transform="scale(4.0)" class="emailIcon">
+						<path d="M7,7L5.268,5.484L0.316,9.729C0.496,9.896,0.739,10,1.007,10h11.986c0.267,0,0.509-0.104,0.688-0.271L8.732,5.484L7,7z"/>
+						<path d="M13.684,0.271C13.504,0.103,13.262,0,12.993,0H1.007C0.74,0,0.498,0.104,0.318,0.273L7,6L13.684,0.271z"/>
+						<polygon points="0,0.878 0,9.186 4.833,5.079 	"/>
+						<polygon points="9.167,5.079 14,9.186 14,0.875 	"/>
+					</g>
+				</svg>
+				michael@yourdesign.ninja
+			</a>
+		</div>
+	</div>
 </div>
 
 <script src="bower_components/foundation/js/foundation.min.js"></script>

@@ -3,10 +3,6 @@
 $(document).foundation();
 
 $(document).ready(function() {
-	$('#fullpage').fullpage({
-		anchors:['about', 'portfolio', 'contact'],
-		keyboardScrolling: false,
-	});
 	$('.tlt').textillate({
 		in: {
 			effect: 'flipInY',
@@ -14,64 +10,77 @@ $(document).ready(function() {
 		},
 	});
 	$("#navigation").addClass("pageLoaded");
-	about = false;
-	portfolio = false;
-	contact = false;
-});
 
-$(function() {
-  $("#aboutAnchor")
+  $(".anchor")
   .mouseenter(function() {
-  	if(!about) {
-	  	animateText('about')
-			about = true;
-  	}
-    $('#aboutMessage').textillate('in');
+    console.log('mousent')
+    var $message = $(this).parent().find('.message');
+    this.animation_set = this.animation_set || false;
+    if(!this.animation_set) {
+      animateText($message)
+      this.animation_set = true;
+    }
+
+    clearTimeout(this.mouseLeaveTimeout);
+    if(!this.mouseLeaveTimeout) {
+      $message
+        .textillate('in');
+    }
   })
   .mouseleave(function() {
-  	$('#aboutMessage').textillate('out');
+    var that = this;
+    this.mouseLeaveTimeout = setTimeout(function () {
+      $(that).parent().find('.message')
+        .textillate('out');
+        that.mouseLeaveTimeout = false;
+    }, 200);
   });
 });
 
+function animateText($el){
+	$el.textillate({
+    in: {
+      effect: 'fadeInLeft',
+      delay: 20,
+    },
+    out: {
+      effect: "fadeOutLeft",
+      delay: 20,
+    },
+  });
+}
+
 $(function() {
-  $("#portfolioAnchor")
-  .mouseenter(function() {
-  	if(!portfolio) {
-	  	animateText('portfolio')
-			portfolio = true;
-  	}
-    $('#portfolioMessage').textillate('in');
-  })
-  .mouseleave(function() {
-  	$('#portfolioMessage').textillate('out');
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
   });
 });
 
-$(function() {
-  $("#contactAnchor")
-  .mouseenter(function() {
-  	if(!contact) {
-	  	animateText('contact')
-			contact= true;
-  	}
-    $('#contactMessage').textillate('in');
-  })
-  .mouseleave(function() {
-  	$('#contactMessage').textillate('out');
-  });
+$(window).scroll(function() {
+    var windowY = $(window).height();
+    var scrolledY = $(window).scrollTop();
+    var image_url = '/img/forest.jpg';
+
+    if (scrolledY > windowY && $("body").css("background-image") != "url('/img/contact.jpg'") {
+    image_url = '/img/contact.jpg';
+    backgroundChange(image_url);
+    }
+    else if (scrolledY < windowY && $("body").css("background-image") != "url('/img/forest.jpg'") {
+    image_url = '/img/forest.jpg';
+    backgroundChange(image_url);
+    }
 });
 
-function animateText(id, isSet){
-	if (!isSet) {
-		$('#' + id + 'Message').textillate({
-			in: {
-				effect: 'fadeInLeft',
-				delay: 20,
-			},
-			out: {
-				effect: "fadeOutLeft",
-				delay: 20,
-			},
-		});
-	}
+
+function backgroundChange(img_url){
+  $("body").css("background-image", "url(" + img_url + ")");
 }
